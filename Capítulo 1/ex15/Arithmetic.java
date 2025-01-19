@@ -21,5 +21,7 @@ public class Arithmetic {
         System.out.printf("%d - %d = %d%n", number1, number2, sub);
         System.out.printf("%d X %d = %d%n", number1, number2, mul);
         System.out.printf("%d / %d = %.2f%n", number1, number2, div);
+
+        input.close();
     }
 }

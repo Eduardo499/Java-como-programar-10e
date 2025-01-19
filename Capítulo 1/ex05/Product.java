@@ -19,5 +19,7 @@ public class Product {
         result = x * y * z;
 
         System.out.printf("The product is %d%n", result);
+
+        input.close();
     }
 }

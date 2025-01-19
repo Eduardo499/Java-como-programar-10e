@@ -11,5 +11,6 @@ public class Exercice3 {
         if (number != 7) {
             System.out.println("The variable number is not equal to 7");
         }
+        input.close();
     }
 }

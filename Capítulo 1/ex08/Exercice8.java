@@ -17,5 +17,7 @@ public class Exercice8 {
         a = b * c;
 
         System.out.printf("O produto de b e c é %d%n", a);
+
+        input.close();
     }
 }
