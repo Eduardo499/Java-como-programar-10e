@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class Exercice3 {
     public static void main(String[] args) {
-        int c, thisIsAVariable, q76354, number;
+        // int c, thisIsAVariable, q76354, number;
+        int number;
         System.out.print("Enter a integer: ");
         Scanner input = new Scanner(System.in);
         number = input.nextInt();
