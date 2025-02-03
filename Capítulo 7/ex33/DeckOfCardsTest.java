@@ -144,7 +144,7 @@ public class DeckOfCardsTest {
 
    // Check for a flush (all the same suit)
    public static boolean hasFlush(List<Card> hand) {
-      String suit = hand.get(0).getSuit();
+      String suit = (String) hand.get(0).getSuit();
       for (Card card : hand) {
          if (!card.getSuit().equals(suit)) {
             return false;
