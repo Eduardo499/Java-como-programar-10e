@@ -15,7 +15,8 @@ public class DeckOfCardsTest {
          myDeckOfCards.shuffle(); // Place cards in random order
 
          // Deal a hand to the player
-         List<Card> playerHand = myDeckOfCards.dealHand();
+         @SuppressWarnings("unchecked")
+         List<Card> playerHand = (List<Card>) myDeckOfCards.dealCard();
          System.out.println("Your hand:");
          printHand(playerHand);
 
@@ -23,7 +24,8 @@ public class DeckOfCardsTest {
          playerHand = playerMove(playerHand, scanner);
 
          // Deal a hand to the computer
-         List<Card> computerHand = myDeckOfCards.dealHand();
+         @SuppressWarnings("unchecked")
+         List<Card> computerHand = (List<Card>) myDeckOfCards.dealCard();
          System.out.println("\nComputer's hand:");
          printHand(computerHand);
 

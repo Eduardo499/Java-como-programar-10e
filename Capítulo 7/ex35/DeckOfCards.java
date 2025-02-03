@@ -1,6 +1,7 @@
 // Fig. 7.10: DeckOfCards.java
 // DeckOfCards class represents a deck of playing cards.
 import java.security.SecureRandom;
+import java.util.List;
 
 public class DeckOfCards
 {
@@ -55,5 +56,10 @@ public class DeckOfCards
          return deck[currentCard++]; // return current Card in array
       else        
          return null; // return null to indicate that all Cards were dealt
-   } 
+   }
+
+public List<Card> dealCard() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'dealCard'");
+} 
 } // end class DeckOfCards

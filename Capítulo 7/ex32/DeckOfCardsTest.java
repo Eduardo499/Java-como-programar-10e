@@ -7,8 +7,10 @@ public class DeckOfCardsTest {
       myDeckOfCards.shuffle(); // Place cards in random order
 
       // Deal two hands of 5 cards
-      List<Card> hand1 = myDeckOfCards.dealHand();
-      List<Card> hand2 = myDeckOfCards.dealHand();
+      @SuppressWarnings("unchecked")
+    List<Card> hand1 = (List<Card>) myDeckOfCards.dealCard();
+      @SuppressWarnings("unchecked")
+      List<Card> hand2 = (List<Card>) myDeckOfCards.dealCard();
 
       System.out.println("Hand 1:");
       for (Card card : hand1) {

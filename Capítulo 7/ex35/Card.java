@@ -17,5 +17,15 @@ public class Card
    public String toString() 
    { 
       return face + " of " + suit;
-   } 
+   }
+
+public String getFace() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getFace'");
+}
+
+public Object getSuit() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getSuit'");
+} 
 } // end class Card
