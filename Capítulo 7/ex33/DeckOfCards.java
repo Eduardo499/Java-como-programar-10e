@@ -51,4 +51,9 @@ public class DeckOfCards {
       }
       return hand;
    }
+
+public String hasFullHouse(List<Card> hand) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'hasFullHouse'");
+}
 }

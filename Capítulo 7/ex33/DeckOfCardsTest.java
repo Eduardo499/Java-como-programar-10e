@@ -3,35 +3,98 @@ import java.util.*;
 public class DeckOfCardsTest {
    // Execute application
    public static void main(String[] args) {
-      DeckOfCards myDeckOfCards = new DeckOfCards();
-      myDeckOfCards.shuffle(); // Place cards in random order
+      int playerWins = 0;
+      int computerWins = 0;
+      Scanner scanner = new Scanner(System.in);
 
-      // Deal two hands of 5 cards
-      List<Card> hand1 = myDeckOfCards.dealHand();
-      List<Card> hand2 = myDeckOfCards.dealHand();
+      for (int i = 0; i < 20; i++) {
+         System.out.println("Game " + (i + 1) + ":");
 
-      System.out.println("Hand 1:");
-      for (Card card : hand1) {
-         System.out.println(card);
+         // Create and shuffle the deck
+         DeckOfCards myDeckOfCards = new DeckOfCards();
+         myDeckOfCards.shuffle(); // Place cards in random order
+
+         // Deal a hand to the player
+         List<Card> playerHand = myDeckOfCards.dealHand();
+         System.out.println("Your hand:");
+         printHand(playerHand);
+
+         // Player chooses cards to discard and replace
+         playerHand = playerMove(playerHand, scanner);
+
+         // Deal a hand to the computer
+         List<Card> computerHand = myDeckOfCards.dealHand();
+         System.out.println("\nComputer's hand:");
+         printHand(computerHand);
+
+         // Evaluate both hands
+         int playerRank = evaluateHand(playerHand);
+         int computerRank = evaluateHand(computerHand);
+
+         // Determine the winner
+         if (playerRank > computerRank) {
+            System.out.println("\nYou win!");
+            playerWins++;
+         } else if (playerRank < computerRank) {
+            System.out.println("\nComputer wins!");
+            computerWins++;
+         } else {
+            System.out.println("\nIt's a tie!");
+         }
+
+         System.out.println("\n--------------------------------");
       }
 
-      System.out.println("\nHand 2:");
-      for (Card card : hand2) {
-         System.out.println(card);
-      }
+      // Display the final results
+      System.out.println("Player Wins: " + playerWins);
+      System.out.println("Computer Wins: " + computerWins);
 
-      // Evaluate both hands
-      int hand1Rank = evaluateHand(hand1);
-      int hand2Rank = evaluateHand(hand2);
-
-      // Determine the winner
-      if (hand1Rank > hand2Rank) {
-         System.out.println("\nHand 1 wins!");
-      } else if (hand1Rank < hand2Rank) {
-         System.out.println("\nHand 2 wins!");
+      // Determine the overall winner
+      if (playerWins > computerWins) {
+         System.out.println("\nYou are the overall winner!");
+      } else if (playerWins < computerWins) {
+         System.out.println("\nComputer is the overall winner!");
       } else {
-         System.out.println("\nIt's a tie!");
+         System.out.println("\nIt's a tie overall!");
       }
+   }
+
+   // Print the hand
+   public static void printHand(List<Card> hand) {
+      for (Card card : hand) {
+         System.out.println(card);
+      }
+   }
+
+   // Player's move (select cards to discard)
+   public static List<Card> playerMove(List<Card> hand, Scanner scanner) {
+      System.out.println("\nWhich cards would you like to discard? (Enter 1-5 for each card you want to discard, separated by spaces):");
+      for (int i = 0; i < hand.size(); i++) {
+         System.out.println((i + 1) + ". " + hand.get(i));
+      }
+      String input = scanner.nextLine();
+      String[] discardIndexes = input.split(" ");
+      Set<Integer> discardSet = new HashSet<>();
+      for (String idx : discardIndexes) {
+         try {
+            int index = Integer.parseInt(idx.trim()) - 1;
+            if (index >= 0 && index < hand.size()) {
+               discardSet.add(index);
+            }
+         } catch (NumberFormatException e) {
+            System.out.println("Invalid input, skipping...");
+         }
+      }
+
+      // Replace discarded cards with new cards from the deck
+      DeckOfCards myDeckOfCards = new DeckOfCards();
+      List<Card> newHand = new ArrayList<>(hand);
+      for (int i = 0; i < hand.size(); i++) {
+         if (discardSet.contains(i)) {
+            newHand.set(i, myDeckOfCards.dealCard());
+         }
+      }
+      return newHand;
    }
 
    // Evaluates a hand and returns a rank value
