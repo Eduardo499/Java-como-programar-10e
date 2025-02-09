@@ -1,3 +1,5 @@
+package ex14;
+
 public class SalariedEmployee extends Employee 
 {
    private double weeklySalary;

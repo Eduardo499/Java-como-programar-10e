@@ -1,3 +1,5 @@
+package ex12;
+
 public class PayrollSystemTest 
 {
    public static void main(String[] args) 

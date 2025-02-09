@@ -1,3 +1,5 @@
+package ex14;
+
 public class HourlyEmployee extends Employee 
 {
    private double wage; // wage per hour

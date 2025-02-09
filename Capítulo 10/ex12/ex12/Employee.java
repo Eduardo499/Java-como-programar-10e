@@ -1,3 +1,5 @@
+package ex12;
+
 public abstract class Employee 
 {
    private final String firstName;

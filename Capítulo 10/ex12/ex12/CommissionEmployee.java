@@ -1,3 +1,5 @@
+package ex12;
+
 public class CommissionEmployee extends Employee 
 {
    private double grossSales; // gross weekly sales

@@ -1,3 +1,5 @@
+package ex12;
+
 public class Date 
 {
    private int month; // 1-12

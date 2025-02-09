@@ -1,3 +1,5 @@
+package ex14;
+
 public class BasePlusCommissionEmployee extends CommissionEmployee 
 {
    private double baseSalary; // base salary per week
