@@ -44,7 +44,7 @@ public class Triangulos extends JPanel {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Círculos, Linhas e Triângulos Aleatórios");
+        JFrame frame = new JFrame("Triângulos Aleatórios");
         Triangulos panel = new Triangulos();
         frame.add(panel);
         frame.setSize(400, 400);

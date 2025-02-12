@@ -25,7 +25,7 @@ public class Linhas extends JPanel {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Círculos e Linhas Aleatórias");
+        JFrame frame = new JFrame("Linhas Aleatórias");
         Linhas panel = new Linhas();
         frame.add(panel);
         frame.setSize(400, 400);

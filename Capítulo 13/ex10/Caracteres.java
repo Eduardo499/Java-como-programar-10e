@@ -24,7 +24,7 @@ public class Caracteres extends JPanel {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Círculos, Linhas, Triângulos e Caracteres Aleatórios");
+        JFrame frame = new JFrame("Caracteres Aleatórios");
         Caracteres panel = new Caracteres();
         frame.add(panel);
         frame.setSize(400, 400);
